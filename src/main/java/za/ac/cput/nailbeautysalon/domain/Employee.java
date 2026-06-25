@@ -1,5 +1,9 @@
 package za.ac.cput.nailbeautysalon.domain;
-
+/* Employee.java
+Employee class
+Author: Vincent Kanzi(221188932)
+Date: 21 June 2026
+*/
 
 import jakarta.persistence.*;
 
