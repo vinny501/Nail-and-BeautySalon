@@ -65,6 +65,21 @@ public class Product {
 
     public static class Builder {
 
+        @Override
+        public String toString() {
+            return "Product{" +
+                    "productID=" + productID +
+                    ", productName='" + productName + '\'' +
+                    ", category='" + category + '\'' +
+                    ", price=" + price +
+                    ", quantityInStock=" + quantityInStock +
+                    ", lowStockThreshold=" + lowStockThreshold +
+                    ", unitOfMeasure='" + unitOfMeasure + '\'' +
+                    ", supplier='" + supplier + '\'' +
+                    ", description='" + description + '\'' +
+                    '}';
+        }
+
         private int productID;
         private String productName;
         private String category;
@@ -120,9 +135,21 @@ public class Product {
             return this;
         }
 
+        public Builder copy(Product product) {
+            this.productID = product.productID;
+            this.productName = product.productName;
+            this.category = product.category;
+            this.price = product.price;
+            this.quantityInStock = product.quantityInStock;
+            this.lowStockThreshold = product.lowStockThreshold;
+            this.unitOfMeasure = product.unitOfMeasure;
+            this.supplier = product.supplier;
+            this.description = product.description;
+            return this;
+        }
+
         public Product build() {
             return new Product(this);
         }
     }
 }
-
