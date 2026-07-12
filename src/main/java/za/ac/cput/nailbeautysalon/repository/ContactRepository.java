@@ -16,5 +16,4 @@ import java.util.List;
 @Repository
 public interface ContactRepository extends JpaRepository<Contact, Address> {
    List<Contact> findContactByAddressProvinceIn(Collection<String> addressProvinces);
-   List<Contact> findAll();
 }

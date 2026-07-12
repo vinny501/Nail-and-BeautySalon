@@ -31,9 +31,9 @@ public class Helper {
 
     public static boolean isValidPostalCode(int code){
         if(code < 1000 || code > 9999) {
-            return false;
+            return true;
         }
-        return true;
+        return false;
     }
 
     public static boolean isValidMobile(String cell) {
