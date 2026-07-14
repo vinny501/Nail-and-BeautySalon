@@ -14,22 +14,22 @@ import static org.junit.jupiter.api.Assertions.*;
 class EmployeeControllerTest {
 
     @Test
-    void create() {
+    void a_create() {
     }
 
     @Test
-    void read() {
+    void b_read() {
     }
 
     @Test
-    void update() {
+    void c_update() {
     }
 
     @Test
-    void delete() {
+    void d_delete() {
     }
 
     @Test
-    void getAll() {
+    void e_getAll() {
     }
 }
