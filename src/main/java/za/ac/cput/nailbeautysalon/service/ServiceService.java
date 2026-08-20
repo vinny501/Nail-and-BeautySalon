@@ -19,7 +19,7 @@ public class ServiceService implements IServiceService<Service, String> {
     private ServiceRepository repository;
 
     @Autowired
-    ServiceService(ServiceRepository repository){
+    public ServiceService(ServiceRepository repository) {
         this.repository = repository;
     }
 
@@ -40,8 +40,11 @@ public class ServiceService implements IServiceService<Service, String> {
 
     @Override
     public boolean delete(String serviceId) {
-        this.repository.deleteById(serviceId);
-        return true;
+        if (this.repository.existsById(serviceId)) {
+            this.repository.deleteById(serviceId);
+            return true;
+        }
+        return false;
     }
 
     @Override

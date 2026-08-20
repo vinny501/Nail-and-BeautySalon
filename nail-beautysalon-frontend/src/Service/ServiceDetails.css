@@ -1,0 +1,284 @@
+.service-details {
+       width: 100%;
+       min-height: 100vh;
+       padding: 60px 30px 90px;
+       box-sizing: border-box;
+       background: #faf9f6;
+}
+
+.service-details-card {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    overflow: hidden;
+    background: #ffffff;
+    border: 1px solid #e4e0d9;
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(29, 48, 40, 0.09);
+}
+
+.service-details-image {
+    display: block;
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.service-details-content {
+    padding: 55px 65px 65px;
+    text-align: center;
+}
+
+.service-details-category {
+    margin: 0 0 15px;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #b87920;
+}
+
+.service-details-card h1 {
+    margin: 0;
+    font-size: 44px;
+    font-weight: 500;
+    color: #1d3028;
+}
+
+.service-details-line {
+    width: 70px;
+    height: 2px;
+    margin: 25px auto;
+    background: #1d3028;
+}
+
+.service-details-description {
+    max-width: 650px;
+    margin: 0 auto 35px;
+    font-size: 17px;
+    line-height: 1.8;
+    color: #707a75;
+}
+
+.service-details-info {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin: 0 auto 45px;
+}
+
+.service-info-box {
+    min-width: 170px;
+    padding: 18px 25px;
+    border: 1px solid #e4e0d9;
+    border-radius: 12px;
+    background: #faf9f6;
+}
+
+.service-info-box span {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #7b847f;
+}
+
+.service-info-box strong {
+    font-size: 22px;
+    color: #c27d12;
+}
+
+.service-details-section {
+    max-width: 680px;
+    margin: 0 auto 35px;
+    padding-top: 30px;
+    border-top: 1px solid #e4e0d9;
+    text-align: left;
+}
+
+.service-details-section h2 {
+    margin: 0 0 18px;
+    font-size: 22px;
+    font-weight: 600;
+    color: #1d3028;
+}
+
+.service-details-section ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.service-details-section li {
+    position: relative;
+    margin-bottom: 12px;
+    padding-left: 25px;
+    font-size: 15px;
+    line-height: 1.6;
+    color: #66716c;
+}
+
+.service-details-section li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    font-weight: 700;
+    color: #b87920;
+}
+
+.aftercare-section p {
+    margin: 0;
+    font-size: 15px;
+    line-height: 1.8;
+    color: #66716c;
+}
+
+.service-details-actions {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 45px;
+    flex-wrap: wrap;
+}
+
+.book-service-button,
+.back-service-button {
+    padding: 13px 28px;
+    border-radius: 25px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.book-service-button {
+    border: 1px solid #1d3028;
+    background: #1d3028;
+    color: #ffffff;
+}
+
+.book-service-button:hover {
+    background: #b87920;
+    border-color: #b87920;
+}
+
+.back-service-button {
+    border: 1px solid #1d3028;
+    background: transparent;
+    color: #1d3028;
+}
+
+.back-service-button:hover {
+    background: #1d3028;
+    color: #ffffff;
+}
+
+.service-details-not-found {
+    min-height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    text-align: center;
+    background: #faf9f6;
+}
+
+.service-details-not-found h1 {
+    color: #1d3028;
+}
+
+.service-details-not-found button {
+    padding: 12px 25px;
+    border: 1px solid #1d3028;
+    border-radius: 25px;
+    background: #1d3028;
+    color: #ffffff;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+
+    .service-details {
+        padding: 40px 20px 60px;
+    }
+
+    .service-details-image {
+        height: 220px;
+    }
+
+    .service-details-content {
+        padding: 40px 30px 50px;
+    }
+
+    .service-details-card h1 {
+        font-size: 34px;
+    }
+
+    .service-details-description {
+        font-size: 16px;
+    }
+
+    .service-details-info {
+        gap: 12px;
+    }
+
+    .service-info-box {
+        min-width: 140px;
+        padding: 15px;
+    }
+
+    .service-details-actions {
+        flex-direction: column;
+    }
+
+    .book-appointment-button,
+    .back-appointment-button {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .service-details {
+        padding: 25px 15px 50px;
+    }
+
+    .service-details-image {
+        height: 180px;
+    }
+
+    .service-details-content {
+        padding: 35px 20px 40px;
+    }
+
+    .service-details-category {
+        font-size: 11px;
+        letter-spacing: 2px;
+    }
+
+    .service-details-card h1 {
+        font-size: 29px;
+    }
+
+    .service-details-description {
+        font-size: 15px;
+    }
+
+    .service-details-info {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .service-info-box {
+        min-width: 0;
+    }
+
+    .service-details-section h2 {
+        font-size: 20px;
+    }
+}

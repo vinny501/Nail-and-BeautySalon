@@ -1,0 +1,298 @@
+.service-management {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 30px 80px;
+    box-sizing: border-box;
+    color: #1d3028;
+}
+
+.service-management > h1 {
+    margin: 0;
+    padding: 70px 20px 15px;
+    text-align: center;
+    font-size: 48px;
+    font-weight: 500;
+    color: #1d3028;
+}
+
+.service-management > h1::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 2px;
+    margin: 20px auto 0;
+    background: #b87920;
+}
+
+.service-form {
+    max-width: 850px;
+    margin: 45px auto 70px;
+    padding: 40px;
+    background: #faf9f6;
+    border: 1px solid #ddd9d2;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(29, 48, 40, 0.06);
+}
+
+.service-form h2 {
+    margin: 0 0 30px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #1d3028;
+    font-size: 28px;
+    font-weight: 500;
+    color: #1d3028;
+}
+
+.service-form form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 22px;
+}
+
+.service-form form > div {
+    display: flex;
+    flex-direction: column;
+}
+
+.service-form form > div:nth-child(4) {
+    grid-column: 1 / -1;
+}
+
+.service-form label {
+    margin-bottom: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #1d3028;
+}
+
+.service-form input,
+.service-form textarea {
+    width: 100%;
+    padding: 13px 15px;
+    box-sizing: border-box;
+    border: 1px solid #ccc7be;
+    border-radius: 6px;
+    background: #ffffff;
+    color: #24332d;
+    font-family: inherit;
+    font-size: 15px;
+    outline: none;
+    transition: all 0.25s ease;
+}
+
+.service-form textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.service-form input:focus,
+.service-form textarea:focus {
+    border-color: #b87920;
+    box-shadow: 0 0 0 3px rgba(184, 121, 32, 0.10);
+}
+
+.service-form input:disabled {
+    background: #eeeae3;
+    color: #777;
+    cursor: not-allowed;
+}
+
+.service-form form > button {
+    padding: 13px 25px;
+    border: 1px solid #1d3028;
+    border-radius: 25px;
+    background: #1d3028;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.service-form form > button:hover {
+    background: #b87920;
+    border-color: #b87920;
+}
+
+.service-form form > button[type="button"] {
+    background: transparent;
+    color: #1d3028;
+}
+
+.service-form form > button[type="button"]:hover {
+    background: #1d3028;
+    color: #ffffff;
+}
+
+.service-list {
+    width: 100%;
+}
+
+.service-list h2 {
+    margin: 0 0 25px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #1d3028;
+    font-size: 30px;
+    font-weight: 500;
+    color: #1d3028;
+}
+
+.service-list > p {
+    padding: 30px;
+    text-align: center;
+    color: #707a75;
+    background: #faf9f6;
+    border: 1px solid #ddd9d2;
+    border-radius: 8px;
+}
+
+.service-list table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #ffffff;
+    border: 1px solid #ddd9d2;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(29, 48, 40, 0.06);
+}
+
+.service-list thead {
+    background: #1d3028;
+}
+
+.service-list th {
+    padding: 16px 14px;
+    text-align: left;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    color: #ffffff;
+}
+
+.service-list td {
+    padding: 16px 14px;
+    border-bottom: 1px solid #eeeae3;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #4f5d56;
+    vertical-align: middle;
+}
+
+.service-list tbody tr {
+    transition: background 0.2s ease;
+}
+
+.service-list tbody tr:hover {
+    background: #faf9f6;
+}
+
+.service-list tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.service-list td:nth-child(5) {
+    font-weight: 700;
+    color: #c27d12;
+    white-space: nowrap;
+}
+
+.service-list td:last-child {
+    white-space: nowrap;
+}
+
+.service-list td:last-child button {
+    margin-right: 8px;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.service-list td:last-child button:first-child {
+    border: 1px solid #1d3028;
+    background: transparent;
+    color: #1d3028;
+}
+
+.service-list td:last-child button:first-child:hover {
+    background: #1d3028;
+    color: #ffffff;
+}
+
+.service-list td:last-child button:last-child {
+    border: 1px solid #b87920;
+    background: transparent;
+    color: #b87920;
+}
+
+.service-list td:last-child button:last-child:hover {
+    background: #b87920;
+    color: #ffffff;
+}
+
+@media (max-width: 900px) {
+
+    .service-management {
+        padding: 0 20px 60px;
+    }
+
+    .service-form {
+        padding: 30px;
+    }
+
+    .service-list {
+        overflow-x: auto;
+    }
+
+    .service-list table {
+        min-width: 850px;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .service-management {
+        padding: 0 15px 50px;
+    }
+
+    .service-management > h1 {
+        padding: 50px 10px 15px;
+        font-size: 36px;
+    }
+
+    .service-form {
+        margin-top: 35px;
+        padding: 25px 20px;
+    }
+
+    .service-form h2 {
+        font-size: 24px;
+    }
+
+    .service-form form {
+        grid-template-columns: 1fr;
+    }
+
+    .service-form form > div:nth-child(4) {
+        grid-column: auto;
+    }
+
+    .service-form form > button {
+        width: 100%;
+    }
+
+    .service-list h2 {
+        font-size: 25px;
+    }
+
+    .service-list {
+        overflow-x: auto;
+    }
+
+    .service-list table {
+        min-width: 800px;
+    }
+}

@@ -6,9 +6,15 @@ package za.ac.cput.nailbeautysalon.domain;
  * date 20 June 2026
  */
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+
+@Entity
 public class Service {
 
+    @Id
     private String serviceId;
+
     private String serviceName;
     private String category;
     private String description;
@@ -55,35 +61,35 @@ public class Service {
                 ", price=" + price +
                 '}';
     }
-    
-    public static class Builder{
-        
+
+    public static class Builder {
+
         private String serviceId;
         private String serviceName;
         private String category;
         private String description;
         private double price;
-        
+
         public Builder setServiceId(String serviceId) {
             this.serviceId = serviceId;
             return this;
         }
-        
+
         public Builder setServiceName(String serviceName) {
             this.serviceName = serviceName;
             return this;
         }
-        
+
         public Builder setCategory(String category) {
             this.category = category;
             return this;
         }
-        
+
         public Builder setDescription(String description) {
             this.description = description;
             return this;
         }
-        
+
         public Builder setPrice(double price) {
             this.price = price;
             return this;
