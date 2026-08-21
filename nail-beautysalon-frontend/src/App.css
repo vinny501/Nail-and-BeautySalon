@@ -289,12 +289,24 @@
 
 .product-bottom {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
-  border-top: 1px solid #eee3dc;
-  padding-top: 20px;
-  margin-top: 10px;
+  gap: 6px;
+  margin-top: 20px;
 }
+.product-price {
+  display: block;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.in-stock,
+.low-stock {
+  display: block;
+  font-size: 18px;
+  font-weight: 500;
+}
+
 
 .product-price {
   color: #292321;
@@ -366,13 +378,49 @@
   padding: 0;
 }
 .product-bottom {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  border-top: 1px solid #eee3dc;
-  padding-top: 20px;
-  margin-top: 15px;
+    width: 100%;
+    border-top: 1px solid #eee3dc;
+    padding-top: 20px;
+    margin-top: 15px;
+    text-align: center;
+  }
+
+  .price-row {
+    width: 100%;
+    margin-bottom: 8px;
+  }
+
+  .stock-row {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .product-price {
+    display: block;
+    font-size: 24px;
+    font-weight: 700;
+  }
+
+  .in-stock,
+  .low-stock {
+    display: block;
+    font-size: 17px;
+    font-weight: 500;
+  }
+
+.product-price {
+  display: block;
+  margin: 0;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.in-stock,
+.low-stock {
+  display: block;
+  margin: 0;
+  font-size: 17px;
+  font-weight: 500;
 }
 
 .product-price {
@@ -383,9 +431,9 @@
 
 .in-stock,
 .low-stock {
-  font-size: 0.95rem;
-  font-weight: 500;
-  white-space: nowrap;
+    font-size: 0.95rem;
+    font-weight: 500;
+    white-space: nowrap;
 }
 
 .product-controls {

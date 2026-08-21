@@ -61,7 +61,7 @@ function Product() {
     });
 
     return (
-        <section className="products-page">
+        <section className="product-page">
 
             <Container>
 
@@ -170,21 +170,25 @@ function Product() {
                                             {/* Price and Stock */}
                                             <div className="product-bottom">
 
-                                                <strong className="product-price">
-                                                    {product.price}
-                                                </strong>
+                                                <div className="price-row">
+                                                    <strong className="product-price">
+                                                        {product.price}
+                                                    </strong>
+                                                </div>
 
-                                                <span
-                                                    className={
-                                                        isLowStock
-                                                            ? 'low-stock'
-                                                            : 'in-stock'
-                                                    }
-                                                >
-                                                    {isLowStock
-                                                        ? 'Low Stock'
-                                                        : 'In Stock'}
-                                                </span>
+                                                <div className="stock-row">
+        <span
+            className={
+                isLowStock
+                    ? 'low-stock'
+                    : 'in-stock'
+            }
+        >
+            {isLowStock
+                ? 'Low Stock'
+                : 'In Stock'}
+        </span>
+                                                </div>
 
                                             </div>
 
