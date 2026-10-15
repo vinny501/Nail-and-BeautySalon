@@ -12,6 +12,7 @@ import java.time.LocalTime;
 @Entity
 public class Contact {
     @Id
+     private Long contactId;
     @OneToOne
     private Address address;
     private String phone;
@@ -21,10 +22,15 @@ public class Contact {
     protected Contact(){}
 
     public Contact(Builder builder){
+        this.contactId = builder.contactId;
         this.address = builder.address;
         this.hours = builder.hours;
         this.email = builder.email;
         this.phone = builder.phone;
+    }
+
+    public Long getContactId() {
+        return contactId;
     }
 
     public Address getAddress() {
@@ -46,18 +52,25 @@ public class Contact {
     @Override
     public String toString() {
         return "Contact{" +
-                "address=" + address +
-                ", phone=" + phone +
+                "contactId=" + contactId +
+                ", address=" + address +
+                ", phone='" + phone + '\'' +
                 ", email='" + email + '\'' +
                 ", hours=" + hours +
                 '}';
     }
 
     public static class Builder{
+        private Long contactId;
         private Address address;
         private String phone;
         private String email;
         private LocalTime hours;
+
+        public Builder setContactId(Long contactId) {
+            this.contactId = contactId;
+            return this;
+        }
 
         public Builder setAddress(Address address) {
             this.address = address;
@@ -80,6 +93,7 @@ public class Contact {
         }
 
         public Builder copy(Contact contact){
+            this.contactId = contact.contactId;
             this.address = contact.address;
             this.hours = contact.hours;
             this.email = contact.email;

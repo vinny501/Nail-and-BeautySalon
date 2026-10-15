@@ -12,7 +12,5 @@ import java.util.List;
 
 @Repository
 public interface EmployeeRepository extends JpaRepository<Employee, String> {
-    List<Employee> findEmployeeBy(String email);
-
-    String userId(String userId);
+    List<Employee> findByEmail(String email);
 }

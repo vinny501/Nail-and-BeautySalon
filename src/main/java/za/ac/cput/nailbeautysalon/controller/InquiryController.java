@@ -10,7 +10,7 @@ import za.ac.cput.nailbeautysalon.domain.Inquiry;
 import za.ac.cput.nailbeautysalon.service.InquiryService;
 
 @RestController
-@RequestMapping
+@RequestMapping("/inquiry")
 public class InquiryController {
 
     private InquiryService service;

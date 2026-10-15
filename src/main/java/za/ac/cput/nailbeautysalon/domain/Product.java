@@ -1,10 +1,14 @@
 package za.ac.cput.nailbeautysalon.domain;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+
 /* author: Confidence Khoza
    Student number: 222927402
  */
-
-public class Product {
+@Entity
+public class Product{
+    @Id
     private int productID;
     private String productName;
     private String category;
@@ -14,6 +18,10 @@ public class Product {
     private String unitOfMeasure;
     private String supplier;
     private String description;
+
+    public Product (){
+
+    }
 
     private Product(Builder builder) {
         this.productID = builder.productID;

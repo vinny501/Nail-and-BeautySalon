@@ -12,7 +12,7 @@ import za.ac.cput.nailbeautysalon.domain.Contact;
 import za.ac.cput.nailbeautysalon.service.ContactService;
 
 @RestController
-@RequestMapping
+@RequestMapping("/contact")
 public class ContactController {
     private ContactService service;
 
@@ -27,7 +27,7 @@ public class ContactController {
     }
 
     @GetMapping("/{id}")
-    public Contact read(@PathVariable Address id){
+    public Contact read(@PathVariable Long id){
         return service.read(id);
     }
 
@@ -37,7 +37,7 @@ public class ContactController {
     }
 
     @DeleteMapping("/{id}")
-    public boolean delete(@PathVariable Address id){
+    public boolean delete(@PathVariable Long id){
         service.delete(id);
         return false;
     }

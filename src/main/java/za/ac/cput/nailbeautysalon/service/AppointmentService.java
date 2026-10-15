@@ -47,4 +47,6 @@ public class AppointmentService implements IAppointmentService <Appointment, Str
     public List<Appointment> getAll() {
         return this.repository.findAll();
     }
+
+    public List<Appointment> findByAddress_City(String city){return this.repository.findByAddress_City(city);}
 }
