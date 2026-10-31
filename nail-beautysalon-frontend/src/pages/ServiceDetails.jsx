@@ -5,16 +5,16 @@
  * The Service Details Page displays information about a selected salon service.
  */
 
-import { useNavigate } from 'react-router-dom'; // <-- IMPORT ADDED
 import eyebrowServicesImage from '../assets/eyebrow-services.jpeg';
 import facialServicesImage from '../assets/facial-services.jpeg';
 import massageServicesImage from '../assets/massage-services.jpeg';
 import nailServicesImage from '../assets/nail-services.jpeg';
 import waxingServicesImage from '../assets/waxing-services.png';
+import { useNavigate } from 'react-router-dom';
 
 function ServiceDetails({ service, onBack }) {
-    const navigate = useNavigate(); // <-- HOOK INITIALIZED
 
+        const navigate = useNavigate();
     if (!service) {
         return (
             <div className="service-details-not-found">
@@ -36,14 +36,6 @@ function ServiceDetails({ service, onBack }) {
     };
 
     const serviceImage = categoryImages[service.category];
-
-    // Helper function to go to the booking page
-    const handleBookClick = () => {
-        // Navigate to /appointment and pass the service name as state
-        navigate('/appointment', { 
-            state: { preselectedService: service.serviceName } 
-        });
-    };
 
     return (
         <div className="service-details">
@@ -112,18 +104,20 @@ function ServiceDetails({ service, onBack }) {
 
                     <div className="service-details-actions">
 
-                        {/* THIS BUTTON NOW NAVIGATES */}
-                        <button 
+                        <button
                             className="book-service-button"
-                            onClick={handleBookClick}
+                            onClick={() =>
+                                navigate('/appointment', {
+                                    state: { service },
+                                })
+                            }
                         >
                             Book Appointment
                         </button>
 
-                        {/* FIXED TYPO AND SYNTAX HERE */}
                         <button
                             className="back-service-button"
-                            onClick={() => navigate('/services')}
+                            onClick={onBack}
                         >
                             Back to Services
                         </button>
