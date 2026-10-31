@@ -5,6 +5,7 @@
  * The Service Details Page displays information about a selected salon service.
  */
 
+import { useNavigate } from 'react-router-dom'; // <-- IMPORT ADDED
 import eyebrowServicesImage from '../assets/eyebrow-services.jpeg';
 import facialServicesImage from '../assets/facial-services.jpeg';
 import massageServicesImage from '../assets/massage-services.jpeg';
@@ -12,6 +13,7 @@ import nailServicesImage from '../assets/nail-services.jpeg';
 import waxingServicesImage from '../assets/waxing-services.png';
 
 function ServiceDetails({ service, onBack }) {
+    const navigate = useNavigate(); // <-- HOOK INITIALIZED
 
     if (!service) {
         return (
@@ -34,6 +36,14 @@ function ServiceDetails({ service, onBack }) {
     };
 
     const serviceImage = categoryImages[service.category];
+
+    // Helper function to go to the booking page
+    const handleBookClick = () => {
+        // Navigate to /appointment and pass the service name as state
+        navigate('/appointment', { 
+            state: { preselectedService: service.serviceName } 
+        });
+    };
 
     return (
         <div className="service-details">
@@ -102,13 +112,18 @@ function ServiceDetails({ service, onBack }) {
 
                     <div className="service-details-actions">
 
-                        <button className="book-service-button">
+                        {/* THIS BUTTON NOW NAVIGATES */}
+                        <button 
+                            className="book-service-button"
+                            onClick={handleBookClick}
+                        >
                             Book Appointment
                         </button>
 
+                        {/* FIXED TYPO AND SYNTAX HERE */}
                         <button
                             className="back-service-button"
-                            onClick={onBack}
+                            onClick={() => navigate('/services')}
                         >
                             Back to Services
                         </button>
