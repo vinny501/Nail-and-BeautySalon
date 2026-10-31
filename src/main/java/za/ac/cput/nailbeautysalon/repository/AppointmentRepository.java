@@ -19,5 +19,7 @@ public interface AppointmentRepository extends JpaRepository<Appointment, String
 
     List<Appointment> findAppointmentsByAddress(Address address);
 
+    List<Appointment> findByAddress_City(String city);
+
     //String AppointmentId(String appointmentId);
 }
