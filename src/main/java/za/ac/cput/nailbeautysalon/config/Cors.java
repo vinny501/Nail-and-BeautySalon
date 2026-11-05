@@ -14,10 +14,11 @@ public class Cors {
     @Bean
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration configuration = new CorsConfiguration();
-        // Allow your React app's origin
-        configuration.setAllowedOrigins(Arrays.asList("http://localhost:3000"));
+        // Allow the React dev server (Vite uses 3000 here, 5173 by default) on localhost / 127.0.0.1
+        configuration.setAllowedOriginPatterns(Arrays.asList(
+                "http://localhost:*", "http://127.0.0.1:*"));
         // Allow the methods you use (OPTIONS is crucial for preflight)
-        configuration.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "OPTIONS"));
+        configuration.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"));
         // Allow all headers
         configuration.setAllowedHeaders(Arrays.asList("*"));
         // Allow credentials if you plan to use them (e.g., cookies/JWT later)

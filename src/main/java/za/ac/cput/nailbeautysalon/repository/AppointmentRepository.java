@@ -5,6 +5,7 @@ import org.springframework.stereotype.Repository;
 import za.ac.cput.nailbeautysalon.domain.Address;
 import za.ac.cput.nailbeautysalon.domain.Appointment;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 /* Appointment.java
@@ -17,5 +18,15 @@ Date: 05 July 2026
 public interface AppointmentRepository extends JpaRepository<Appointment, String> {
     List<Appointment> findAppointmentsByAddress(Address address);
 
-    //String AppointmentId(String appointmentId);
+    List<Appointment> findByAddress_City(String city);
+
+    List<Appointment> findByCustomerIdOrderByDateTimeAsc(String customerId);
+
+    List<Appointment> findAllByOrderByDateTimeAsc();
+
+    /** Bookings occupying a time slot (everything that is not cancelled). */
+    List<Appointment> findByDateTimeAndStatusNot(LocalDateTime dateTime, String status);
+
+    /** Bookings inside a time range, used to work out which slots of a day are taken. */
+    List<Appointment> findByDateTimeBetweenAndStatusNot(LocalDateTime from, LocalDateTime to, String status);
 }

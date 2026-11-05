@@ -14,6 +14,7 @@ import nailServicesImage from '../assets/nail-services.jpeg';
 import waxingServicesImage from '../assets/waxing-services.png';
 
 function ServiceDetails({ service, onBack }) {
+
     const navigate = useNavigate();
 
     if (!service) {
@@ -36,7 +37,9 @@ function ServiceDetails({ service, onBack }) {
         'Body Waxing': waxingServicesImage
     };
 
-    const serviceImage = categoryImages[service.category];
+    // Display the individual service image or use the category image as a fallback.
+    const serviceImage =
+        service.image || categoryImages[service.category];
 
     return (
         <div className="service-details">
@@ -45,7 +48,7 @@ function ServiceDetails({ service, onBack }) {
 
                 <img
                     src={serviceImage}
-                    alt={service.category}
+                    alt={service.serviceName}
                     className="service-details-image"
                 />
 
@@ -99,4 +102,3 @@ function ServiceDetails({ service, onBack }) {
 }
 
 export default ServiceDetails;
-

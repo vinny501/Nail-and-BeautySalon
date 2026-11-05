@@ -1,10 +1,6 @@
-﻿export const appointmentsApi = {
-  create: async (appointment) => {
-    console.log("Appointment:", appointment);
+import { createBooking } from '../services/bookingService';
 
-    return {
-      success: true,
-      data: appointment,
-    };
-  },
+// Kept so existing imports keep working - this now talks to the real backend.
+export const appointmentsApi = {
+  create: (appointment) => createBooking(appointment),
 };

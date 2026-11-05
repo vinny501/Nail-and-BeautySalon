@@ -7,15 +7,24 @@ Date: 22 June 2026
 */
 
 
+import jakarta.persistence.*;
+
 import java.time.LocalDateTime;
 
+@Entity
+@Table(name = "appointments")
 public class Appointment {
+    @Id
     private String appointmentId;
     private LocalDateTime dateTime;
     private String serviceSelected;
+    @ManyToOne(cascade = CascadeType.MERGE)
     private Address address;
+    @Column(length = 1000)
     private String notes;
     private String status;
+    /** userId of the customer who made the booking (links to Customer.userId) */
+    private String customerId;
 
     protected Appointment() {
     }
@@ -28,6 +37,11 @@ public class Appointment {
         this.address = builder.address;
         this.notes = builder.notes;
         this.status = builder.status;
+        this.customerId = builder.customerId;
+    }
+
+    public String getCustomerId() {
+        return customerId;
     }
 
     public Address getAddress() {
@@ -63,6 +77,7 @@ public class Appointment {
                 ", serviceSelected='" + serviceSelected + '\'' +
                 ", notes='" + notes + '\'' +
                 ", status='" + status + '\'' +
+                ", customerId='" + customerId + '\'' +
                 '}';
     }
 
@@ -74,6 +89,12 @@ public static class Builder {
     private Address address;
     private String notes;
     private String status;
+    private String customerId;
+
+    public Builder setCustomerId(String customerId) {
+        this.customerId = customerId;
+        return this;
+    }
 
     public Builder setAppointmentId(String appointmentId) {
         this.appointmentId = appointmentId;
@@ -110,6 +131,7 @@ public static class Builder {
         this.address = appointment.address;
         this.notes = appointment.notes;
         this.status = appointment.status;
+        this.customerId = appointment.customerId;
         return this;
     }
     public Appointment build() {return new Appointment(this);}
